@@ -1,4 +1,5 @@
-﻿using GestaoDeEquipamentos.ConsoleApp.ModuloChamado;
+﻿using Fabricantes_da_Gestão_de_Equipamentos_ConsoleApp1.ModuloFabricantes;
+using GestaoDeEquipamentos.ConsoleApp.ModuloChamado;
 using GestaoDeEquipamentos.ConsoleApp.ModuloEquipamento;
 
 namespace GestaoDeEquipamentos.ConsoleApp;
@@ -9,6 +10,7 @@ class Program
     {
         RepositorioEquipamento repositorioEquipamento = new RepositorioEquipamento();
         RepositorioChamado repositorioChamado = new RepositorioChamado();
+        RepositorioFabricante repositorioFabricante = new RepositorioFabricante();
 
         TelaEquipamento telaEquipamento = new TelaEquipamento();
         telaEquipamento.repositorioEquipamento = repositorioEquipamento;
@@ -16,6 +18,9 @@ class Program
         TelaChamado telaChamado = new TelaChamado();
         telaChamado.repositorioChamado = repositorioChamado;
         telaChamado.repositorioEquipamento = repositorioEquipamento;
+
+        TelaFabricante TelaFabricante = new TelaFabricante();
+        TelaFabricante.repositorioFabricante = repositorioFabricante;
 
         while (true)
         {
@@ -75,6 +80,33 @@ class Program
                 }
             }
 
+            else if (telaEscolhida == '3')
+            {
+                char opcaoEscolhida = TelaFabricante.ApresentarMenu();
+
+                if (opcaoEscolhida == 'S')
+                    break;
+
+                switch (opcaoEscolhida)
+                {
+                    case '1':
+                        TelaFabricante.CadastrarRegistro();
+                        break;
+
+                    case '2':
+                        TelaFabricante.VisualizarRegistros(true);
+                        break;
+
+                    case '3':
+                        TelaFabricante.EditarRegistro();
+                        break;
+
+                    case '4':
+                        TelaFabricante.ExcluirRegistro();
+                        break;
+                }
+            }
+
         }
     }
 
@@ -90,6 +122,7 @@ class Program
 
         Console.WriteLine("1 - Controle de Equipamentos");
         Console.WriteLine("2 - Controle de Chamados");
+        Console.WriteLine("3 - Controle de Fabricantes");
         Console.WriteLine("S - Sair");
 
         Console.WriteLine();

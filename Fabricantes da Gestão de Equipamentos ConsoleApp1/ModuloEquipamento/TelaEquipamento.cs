@@ -5,7 +5,7 @@ namespace GestaoDeEquipamentos.ConsoleApp.ModuloEquipamento;
 public class TelaEquipamento
 {
     public RepositorioEquipamento repositorioEquipamento;
-
+    //public RepositorioFabricante repositorioFabricante;
     public void ExibirCabecalho()
     {
         Console.Clear();

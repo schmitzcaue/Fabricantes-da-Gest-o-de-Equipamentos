@@ -1,6 +1,7 @@
 ﻿
 using Fabricantes_da_Gestão_de_Equipamentos_ConsoleApp1.ModuloChamado;
 using Fabricantes_da_Gestão_de_Equipamentos_ConsoleApp1.ModuloEquipamento;
+using GestaoDeEquipamentos.ConsoleApp.ModuloEquipamento;
 
 namespace GestaoDeEquipamentos.ConsoleApp.ModuloChamado;
 
